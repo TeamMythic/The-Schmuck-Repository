@@ -29,6 +29,7 @@
 ExportedObj/
 .consulo/
 *.csproj
+#I added for our custom ignore folders inside of Unity
 *.ignoreMe
 *.unityproj
 *.sln
