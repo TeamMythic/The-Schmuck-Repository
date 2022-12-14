@@ -1,0 +1,54 @@
+{
+    "name": "MouseActionMapping",
+    "maps": [
+        {
+            "name": "MainMouseActionMapping",
+            "id": "d008456a-5509-4c64-8ddf-e39b1595f87b",
+            "actions": [
+                {
+                    "name": "LeftMouseClick",
+                    "type": "Button",
+                    "id": "1e563a47-f067-4305-812f-b6c4b3a11d72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Position",
+                    "type": "PassThrough",
+                    "id": "a89b70d1-d8e8-492b-bce7-82ccbac1c126",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "48f913b7-aec6-4e0a-944c-5ca5d597e5d3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftMouseClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa77c8f0-3534-43e6-b6d4-308127dcb3e4",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
