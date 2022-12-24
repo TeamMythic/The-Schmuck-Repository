@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
@@ -15,26 +16,48 @@ public class Interactables : MonoBehaviour
 	[SerializeField] private bool canBeInterupted = false;
 	private bool doingSomething = false;
 	private Coroutine doingSomethingCo = null;
+	private Coroutine playParticleEffectCo = null;
 	[Header("Scale:")]
 	[SerializeField] private Vector3 maxValueScale = new Vector3(1f, 1f, 1f);
 	[SerializeField] private Vector3 minValueScale = new Vector3(.666f, .666f, .666f);
-	[Header("ScaleSpeed")]
+	[Header("ScaleSpeed:")]
 	[SerializeField] private float baseScaleSpeed = 0f;
+	[Header("ParticleEffect:")]
+	[SerializeField] private bool hasAParticleEffect = false;
+	[Tooltip("Leave Blank (null) if it (the interactable Object) does not have one.")]
+	public Transform particleEffectPrefab = null;
+	[SerializeField] private float particleEffectDuration = 1f;
+	[SerializeField] private GameObject instantiateHolder = null;
 	public bool doSomething()
 	{
 		if (!doingSomething)
 		{
 			doingSomethingCo = StartCoroutine(simpleLerpScaleDown());
+			if (hasAParticleEffect)
+				playParticleEffectCo = StartCoroutine(playParticleEffect());
 			return true;
 		}
 		//Then the coroutine is currently running:
 		if(canBeInterupted)
 		{
-			StopCoroutine(doingSomethingCo);
+			if(playParticleEffectCo != null)
+				StopCoroutine(playParticleEffectCo);
+			if(doingSomethingCo != null)
+				StopCoroutine(doingSomethingCo);
 			doingSomethingCo = StartCoroutine(simpleLerpScaleDown());
+			if (hasAParticleEffect)
+				playParticleEffectCo = StartCoroutine(playParticleEffect());
 			return true;
 		}
 		return false;
+	}
+	private IEnumerator playParticleEffect()
+	{
+		var obj = Instantiate(particleEffectPrefab, transform);
+		obj.parent = instantiateHolder.transform;
+		obj.GetComponent<ParticleSystemRenderer>().material = this.gameObject.GetComponent<MeshRenderer>().material;
+		yield return new WaitForSeconds(particleEffectDuration - 0.02f);
+		Destroy(obj.gameObject);
 	}
 	private IEnumerator simpleLerpScaleDown()
 	{

@@ -160,6 +160,11 @@ MonoBehaviour:
   maxValueScale: {x: 1, y: 1, z: 1}
   minValueScale: {x: 0.666, y: 0.666, z: 0.666}
   baseScaleSpeed: 0.125
+  hasAParticleEffect: 1
+  particleEffectPrefab: {fileID: 6732135308040361869, guid: 765f3929a4873c04db8003e28aeebca1,
+    type: 3}
+  particleEffectDuration: 1
+  instantiateHolder: {fileID: 592402359}
 --- !u!65 &51498616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -392,14 +397,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157207112}
-  m_LocalRotation: {x: 0.69478387, y: 0, z: 0, w: 0.7192186}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.22830936, y: 0.4949592, z: -0.1366133, w: 0.82718027}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 88.02, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.86, y: 61.79, z: 0}
 --- !u!114 &157207115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,6 +673,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &592402359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592402360}
+  m_Layer: 0
+  m_Name: CreatedObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &592402360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592402359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942993358
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +835,11 @@ MonoBehaviour:
   maxValueScale: {x: 1, y: 1, z: 1}
   minValueScale: {x: 0.666, y: 0.666, z: 0.666}
   baseScaleSpeed: 0.125
+  hasAParticleEffect: 1
+  particleEffectPrefab: {fileID: 6732135308040361869, guid: 765f3929a4873c04db8003e28aeebca1,
+    type: 3}
+  particleEffectDuration: 1
+  instantiateHolder: {fileID: 592402359}
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1087,11 @@ MonoBehaviour:
   maxValueScale: {x: 1, y: 1, z: 1}
   minValueScale: {x: 0.666, y: 0.666, z: 0.666}
   baseScaleSpeed: 0.125
+  hasAParticleEffect: 1
+  particleEffectPrefab: {fileID: 6732135308040361869, guid: 765f3929a4873c04db8003e28aeebca1,
+    type: 3}
+  particleEffectDuration: 1
+  instantiateHolder: {fileID: 592402359}
 --- !u!65 &1985197468
 BoxCollider:
   m_ObjectHideFlags: 0
